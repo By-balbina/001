@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <title>Findoor</title>
 
 <style>
+
+/* GENERAL */
 
 body {
     font-family: Arial, sans-serif;
@@ -19,22 +22,289 @@ header {
     text-align: center;
 }
 
+/* BOTÓN AGREGAR CASA */
+
+.add-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0a2540;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* GRID estilo Pinterest */
+
 .container {
-    width: 90%;
-    margin: 40px auto;
+    width: 95%;
+    margin: auto;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    column-count: 3;
+    column-gap: 15px;
+    margin-top: 20px;
 }
 
 .card {
     background: white;
     border-radius: 10px;
+    margin-bottom: 15px;
     overflow: hidden;
-    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+    width: 100%;
+}
+
+.card img {
+    width: 100%;
+}
+
+/* CONTENIDO */
+
+.card-content {
+    padding: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #0a2540;
+}
+
+.location {
+    font-size: 14px;
+    color: gray;
+}
+
+/* BOTONES */
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.buttons button {
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.save { background:#ff4d6d; color:white; }
+.contact { background:#0a2540; color:white; }
+.map { background:#4caf50; color:white; }
+.info { background:#ff9800; color:white; }
+
+/* FORMULARIO */
+
+.modal {
+    display: none;
+    position: fixed;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.modal input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Findoor</h1>
+<p>Open your next home</p>
+</header>
+
+<div class="container">
+
+<div class="grid" id="propertyGrid">
+
+<!-- CASA 1 -->
+
+<div class="card">
+
+<img src="001.jpg">
+
+<div class="card-content">
+
+<p class="price">₡47,500,000</p>
+<p class="location">San Pablo de Heredia</p>
+
+<div class="buttons">
+
+<button class="save" onclick="guardar()">❤️</button>
+
+<button class="contact" onclick="contactar()">📞</button>
+
+<button class="map" onclick="ubicacion()">📍</button>
+
+<button class="info" onclick="detalles()">ℹ️</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CASA 2 -->
+
+<div class="card">
+
+<img src="002.jpg">
+
+<div class="card-content">
+
+<p class="price">₡39,000,000</p>
+<p class="location">Alajuela Centro</p>
+
+<div class="buttons">
+
+<button class="save" onclick="guardar()">❤️</button>
+
+<button class="contact" onclick="contactar()">📞</button>
+
+<button class="map" onclick="ubicacion()">📍</button>
+
+<button class="info" onclick="detalles()">ℹ️</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- BOTÓN AÑADIR CASA -->
+
+<button class="add-btn" onclick="abrirFormulario()">
+➕
+</button>
+
+<!-- FORMULARIO -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<h3>Añadir casa</h3>
+
+<input type="text" id="precio" placeholder="Precio">
+
+<input type="text" id="ubicacionInput" placeholder="Ubicación">
+
+<input type="text" id="imagen" placeholder="Nombre imagen (ej: 003.jpg)">
+
+<button onclick="agregarCasa()">
+Agregar
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+/* BOTONES */
+
+function guardar(){
+    alert("Casa guardada ❤️");
+}
+
+function contactar(){
+    alert("Contactar vendedor 📞");
+}
+
+function ubicacion(){
+    alert("Mostrar ubicación 📍");
+}
+
+function detalles(){
+    alert("Ver detalles ℹ️");
+}
+
+/* FORMULARIO */
+
+function abrirFormulario(){
+    document.getElementById("modal").style.display="block";
+}
+
+function agregarCasa(){
+
+let precio =
+document.getElementById("precio").value;
+
+let ubicacion =
+document.getElementById("ubicacionInput").value;
+
+let imagen =
+document.getElementById("imagen").value;
+
+let nuevaCasa = `
+
+<div class="card">
+
+<img src="${imagen}">
+
+<div class="card-content">
+
+<p class="price">${precio}</p>
+
+<p class="location">${ubicacion}</p>
+
+<div class="buttons">
+
+<button class="save" onclick="guardar()">❤️</button>
+
+<button class="contact" onclick="contactar()">📞</button>
+
+<button class="map" onclick="ubicacion()">📍</button>
+
+<button class="info" onclick="detalles()">ℹ️</button>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+document.getElementById("propertyGrid")
+.innerHTML += nuevaCasa;
+
+document.getElementById("modal")
+.style.display="none";
+
+}
+
+</script>
+
+</body>
+
+</html>    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
 }
 
 .card img {

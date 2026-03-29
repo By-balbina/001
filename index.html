@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Findoor</title>
+<meta charset="UTF-8">
+<title>Findoor</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        header {
-            background-color: #0a2540;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+}
 
-        .property {
-            background-color: white;
-            margin: 40px auto;
-            padding: 20px;
-            width: 80%;
-            border-radius: 10px;
-        }
+header {
+    background-color: #0a2540;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
 
-        img {
-            width: 100%;
-            border-radius: 10px;
-        }
+.property {
+    background-color: white;
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
 
-        h2 {
-            margin-top: 10px;
-        }
+/* Galería */
 
-    </style>
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+</style>
 
 </head>
 
 <body>
 
 <header>
-    <h1>Findoor</h1>
-    <p>Open your next home</p>
+<h1>Findoor</h1>
+<p>Open your next home</p>
 </header>
 
 <div class="property">
+
+<div class="gallery">
 
 <img src="001.jpg">
 <img src="002.jpg">
@@ -60,15 +70,22 @@
 <img src="009.jpg">
 <img src="010.jpg">
 
-    <h2>Casa moderna en San José</h2>
+</div>
 
-    <p><strong>Precio:</strong> $250,000</p>
+<h2>Casa moderna en San José</h2>
 
-    <p>
-        Casa moderna con jardín amplio, 3 habitaciones,
-        2 baños y cochera para 2 vehículos.
-    </p>
+<p><strong>Precio:</strong> $250,000</p>
 
+<p>
+Casa moderna con jardín amplio,
+3 habitaciones,
+2 baños y cochera para 2 vehículos.
+</p>
+
+</div>
+
+</body>
+</html>
 </div>
 
 </body>

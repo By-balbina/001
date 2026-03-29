@@ -19,29 +19,51 @@ header {
     text-align: center;
 }
 
-.property {
-    background-color: white;
+.container {
+    width: 90%;
     margin: 40px auto;
-    padding: 20px;
-    width: 80%;
-    border-radius: 10px;
 }
 
-/* Galería */
-
-.gallery {
+.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 20px;
 }
 
-.gallery img {
-    width: 100%;
+.card {
+    background: white;
     border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
 }
 
-h2 {
-    margin-top: 20px;
+.card img {
+    width: 100%;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.price {
+    color: #0a2540;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.location {
+    color: gray;
+    font-size: 14px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #0a2540;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
 }
 
 </style>
@@ -55,37 +77,242 @@ h2 {
 <p>Open your next home</p>
 </header>
 
-<div class="property">
+<div class="container">
 
-<div class="gallery">
+<div class="grid">
 
+<!-- CASA 1 -->
+
+<div class="card">
 <img src="001.jpg">
-<img src="002.jpg">
-<img src="003.jpg">
-<img src="004.jpg">
-<img src="005.jpg">
-<img src="006.jpg">
-<img src="007.jpg">
-<img src="008.jpg">
-<img src="009.jpg">
-<img src="010.jpg">
 
-</div>
+<div class="card-content">
+<h3>Casa en Heredia</h3>
 
-<h2>Casa moderna en San José</h2>
-
-<p><strong>Precio:</strong> $250,000</p>
-
-<p>
-Casa moderna con jardín amplio,
-3 habitaciones,
-2 baños y cochera para 2 vehículos.
+<p class="price">
+₡47,500,000
 </p>
 
+<p class="location">
+San Pablo de Heredia
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
 </div>
 
-</body>
-</html>
+<!-- CASA 2 -->
+
+<div class="card">
+<img src="002.jpg">
+
+<div class="card-content">
+<h3>Casa en Alajuela</h3>
+
+<p class="price">
+₡39,000,000
+</p>
+
+<p class="location">
+Alajuela Centro
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 3 -->
+
+<div class="card">
+<img src="003.jpg">
+
+<div class="card-content">
+<h3>Casa en Cartago</h3>
+
+<p class="price">
+₡42,000,000
+</p>
+
+<p class="location">
+Cartago Centro
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 4 -->
+
+<div class="card">
+<img src="004.jpg">
+
+<div class="card-content">
+<h3>Casa en Escazú</h3>
+
+<p class="price">
+₡95,000,000
+</p>
+
+<p class="location">
+Escazú
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 5 -->
+
+<div class="card">
+<img src="005.jpg">
+
+<div class="card-content">
+<h3>Casa en Tibás</h3>
+
+<p class="price">
+₡52,000,000
+</p>
+
+<p class="location">
+Tibás
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 6 -->
+
+<div class="card">
+<img src="006.jpg">
+
+<div class="card-content">
+<h3>Casa en Desamparados</h3>
+
+<p class="price">
+₡36,500,000
+</p>
+
+<p class="location">
+Desamparados
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 7 -->
+
+<div class="card">
+<img src="007.jpg">
+
+<div class="card-content">
+<h3>Casa en Guadalupe</h3>
+
+<p class="price">
+₡44,000,000
+</p>
+
+<p class="location">
+Guadalupe
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 8 -->
+
+<div class="card">
+<img src="008.jpg">
+
+<div class="card-content">
+<h3>Casa en Moravia</h3>
+
+<p class="price">
+₡58,000,000
+</p>
+
+<p class="location">
+Moravia
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 9 -->
+
+<div class="card">
+<img src="009.jpg">
+
+<div class="card-content">
+<h3>Casa en Santa Ana</h3>
+
+<p class="price">
+₡110,000,000
+</p>
+
+<p class="location">
+Santa Ana
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+<!-- CASA 10 -->
+
+<div class="card">
+<img src="010.jpg">
+
+<div class="card-content">
+<h3>Casa en Curridabat</h3>
+
+<p class="price">
+₡68,000,000
+</p>
+
+<p class="location">
+Curridabat
+</p>
+
+<a class="button">
+Ver detalles
+</a>
+
+</div>
+</div>
+
+</div>
+
 </div>
 
 </body>
